@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Syntax Marathon Ultimate</title>
+
+  <link rel="stylesheet" href="style.css"/>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+  <div class="bg-animation"></div>
+
+  <header>
+    <h1>⚡ Syntax Marathon</h1>
+    <p>Ultimate Coding Typing Challenge</p>
+  </header>
+
+  <!-- TOP STATS -->
+  <section class="stats-container">
+
+    <div class="card">
+      <h2 id="timer">60</h2>
+      <span>TIME</span>
+    </div>
+
+    <div class="card">
+      <h2 id="wpm">0</h2>
+      <span>WPM</span>
+    </div>
+
+    <div class="card">
+      <h2 id="accuracy">100%</h2>
+      <span>ACCURACY</span>
+    </div>
+
+    <div class="card">
+      <h2 id="score">0</h2>
+      <span>SCORE</span>
+    </div>
+
+    <div class="card">
+      <h2 id="combo">x0</h2>
+      <span>COMBO</span>
+    </div>
+
+  </section>
+
+  <!-- SETTINGS -->
+  <section class="controls">
+
+    <div class="control-box">
+      <label>Difficulty</label>
+
+      <select id="difficulty">
+        <option value="easy">Easy</option>
+        <option value="medium" selected>Medium</option>
+        <option value="hard">Hard</option>
+      </select>
+    </div>
+
+    <div class="control-box">
+      <label>Language</label>
+
+      <select id="language">
+
+        <option value="python">Python</option>
+        <option value="javascript">JavaScript</option>
+        <option value="typescript">TypeScript</option>
+        <option value="java">Java</option>
+        <option value="cpp">C++</option>
+        <option value="c">C</option>
+        <option value="csharp">C#</option>
+        <option value="go">Go</option>
+        <option value="rust">Rust</option>
+        <option value="php">PHP</option>
+        <option value="swift">Swift</option>
+        <option value="kotlin">Kotlin</option>
+        <option value="ruby">Ruby</option>
+        <option value="sql">SQL</option>
+        <option value="bash">Bash</option>
+        <option value="html">HTML</option>
+        <option value="css">CSS</option>
+        <option value="react">React</option>
+        <option value="leetcode">LeetCode</option>
+
+      </select>
+    </div>
+
+    <div class="control-box">
+      <label>Mode</label>
+
+      <select id="modeSelect">
+        <option value="normal">Normal</option>
+        <option value="zen">Zen Mode</option>
+      </select>
+    </div>
+
+  </section>
+
+  <!-- ACTIVE MODES -->
+  <div id="activeModes"></div>
+
+  <!-- TYPING AREA -->
+  <section class="typing-container" id="typingContainer">
+
+    <div class="editor-top">
+
+      <span id="editorFilename">challenge.py</span>
+
+      <span id="langDisplay">python</span>
+
+    </div>
+
+    <div class="progress-container">
+      <div class="progress-bar"></div>
+    </div>
+
+    <div id="quote"></div>
+
+    <textarea
+      id="input"
+      spellcheck="false"
+      autocomplete="off"
+      autocorrect="off"
+      autocapitalize="off"
+      placeholder="Press Start and begin typing..."
+      disabled
+    ></textarea>
+
+    <div class="typing-footer">
+      <span id="charCount">0 / 0 chars</span>
+    </div>
+
+  </section>
+
+  <!-- BUTTONS -->
+  <section class="buttons">
+
+    <button id="startBtn">▶ Start</button>
+
+    <button id="pauseBtn">⏸ Pause</button>
+
+    <button id="restartBtn">↻ Restart</button>
+
+    <button id="themeBtn">🌙 Theme</button>
+
+    <button id="ghostBtn">👻 Ghost Mode</button>
+
+    <button id="suddenDeathBtn">💀 Sudden Death OFF</button>
+
+  </section>
+
+  <!-- TIME MODES -->
+  <section class="time-controls">
+
+    <button class="time-btn active" data-time="60">60s</button>
+
+    <button class="time-btn" data-time="120">120s</button>
+
+    <button class="time-btn" data-time="180">180s</button>
+
+  </section>
+
+  <!-- POWERUPS -->
+  <section class="powerups">
+
+    <button id="freezeBtn">
+      ❄ Freeze +10s
+    </button>
+
+    <button id="doubleBtn">
+      ⚡ 2x Score
+    </button>
+
+    <button id="skipBtn">
+      ⏭ Skip
+    </button>
+
+    <button id="hintBtn">
+      💡 Hint
+    </button>
+
+  </section>
+
+  <!-- DAILY CHALLENGE -->
+  <section class="daily-challenge">
+
+    <h2>🏆 Daily Challenge</h2>
+
+    <p id="challengeText"></p>
+
+  </section>
+
+  <!-- LEADERBOARD -->
+  <section class="leaderboard">
+
+    <h2>🔥 Leaderboard</h2>
+
+    <ul id="leaderboardList"></ul>
+
+  </section>
+
+  <!-- CHART -->
+  <section class="chart-box">
+    <canvas id="progressChart"></canvas>
+  </section>
+
+  <!-- RESULT -->
+  <section class="result-box" id="resultBox">
+
+    <h2>Game Over</h2>
+
+    <div id="finalScore"></div>
+
+  </section>
+
+  <!-- COMBO POPUP -->
+  <div id="comboPopup"></div>
+
+  <!-- TOAST -->
+  <div id="toast">
+
+    <h3 id="toastTitle"></h3>
+
+    <p id="toastMsg"></p>
+
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
